@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:2:1-10:12
+	package
+		ADDED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:3:5-49
+		INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:5:5-32
+		INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:4:5-31
+		INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml
+application
+ADDED from E:\AndroidProject\Yp_Robot1\library_AndroidPullToRefresh\src\main\AndroidManifest.xml:7:5-8:19

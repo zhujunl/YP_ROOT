@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
+    defaultConfig {
+        applicationId "com.yunpeng_chuankou"
+        minSdkVersion 21
+        targetSdkVersion 26
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation (name: 'Water-release_1.0.5.4_0512', ext: 'aar')
+    compile files('libs/fastjson-1.1.45.android.jar')
+//    compile files('libs/gson-2.2.2.jar')
+    compile files('libs/x-2.6.14-src-1.4-modify.jar')
+    compile files('libs/xutils-3.3.34.jar')
+    compile project(':library_AndroidPullToRefresh')
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:support-v4:26.1.0'
+    compile project(':library_fanwe')
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:support-annotations:22.1.0'
+    compile project(':library_androidshapeimageview')
+    compile project(':library_qrcode_zxing')
+    implementation files('libs/CH34xUARTDriver.jar')
+    compile 'com.dyhdyh.support:count-down-timer:1.0.2'
+}

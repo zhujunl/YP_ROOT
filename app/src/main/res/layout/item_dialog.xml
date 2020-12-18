@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bg_activity_gray">
+    <com.o2o_jiangchen.customview.EyeView
+        android:id="@+id/eyeview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/ll_parent"
+        android:layout_width="800dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bg_white_corner_shape"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        >
+        <TextView
+            android:id="@+id/dialog_custom_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:text="206"
+            android:textColor="#FA8072"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            android:padding="30dp"
+            />
+
+        <TextView
+            android:id="@+id/dialog_custom_tv_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="提示"
+            android:textColor="@color/red"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/dialog_custom_ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开门取餐"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:background="@drawable/shape_kai_corner"
+                android:paddingTop="50dp"
+                android:paddingBottom="50dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:text="请取餐"
+            android:textColor="#FA8072"
+            android:textSize="@dimen/text_size_title"
+            android:padding="30dp"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

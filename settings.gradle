@@ -1,0 +1,1 @@
+include ':app', ':library_AndroidPullToRefresh', ':library_fanwe', ':library_androidshapeimageview', ':library_qrcode_zxing'

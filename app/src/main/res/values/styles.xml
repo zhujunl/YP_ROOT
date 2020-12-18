@@ -1,0 +1,65 @@
+<resources>
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="FanweTheme" parent="android:Theme.Holo">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@style/AppAnimation</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+    <style name="AppAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_slide_in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_slide_out_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/anim_slide_in_from_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/anim_slide_out_to_right</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="ClipImageTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+    <style name="unlogin_dialog" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+        <item name="android:windowFullscreen">true</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--显示软件盘-->
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+    </style>
+
+
+
+
+    <!--设置TabLayout内文字的字体大小-->
+    <style name="MyTabLayoutTextAppearance">
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>

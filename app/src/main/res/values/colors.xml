@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主题颜色 -->
+    <color name="main_color">#FB6F08</color>
+    <!-- 主题颜色按下颜色 -->
+    <color name="main_color_press">#ffcc66</color>
+    <color name="black">#000000</color>
+    <!-- 标题栏颜色 -->
+    <color name="bg_title_bar">@color/black</color>
+    <color name="bg_title_bar_pressed">@color/main_color_press</color>
+    <!-- 分割线颜色 -->
+    <color name="stroke">#e5e5e5</color>
+    <!-- 灰色按下颜色 -->
+    <color name="gray_press">#e5e5e5</color>
+    <!-- activity灰色背景 -->
+    <color name="bg_activity_gray">#f4f4f4</color>
+    <!-- 主页下面菜单按钮颜色 -->
+    <color name="text_home_menu_normal">@color/gray</color>
+    <color name="text_home_menu_selected">@color/ligth_bule</color>
+    <!-- 分割线颜色 深 -->
+    <color name="stroke_deep">#d8d8d8</color>
+    <color name="cancel_press">#FFB90F</color>
+
+    <color name="colorPrimary">#393a3f</color>
+    <color name="colorPrimaryDark">#303135</color>
+    <color name="colorAccent">#1aad19</color>
+    <color name="load_success">#03a44e</color>
+
+    <color name="color_E1F650">@color/ligth_bule</color>
+</resources>

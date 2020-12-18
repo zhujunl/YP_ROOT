@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Yp_Robot1.iml" filepath="$PROJECT_DIR$/.idea/modules/Yp_Robot1.iml" group="Yp_Robot1" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Yp_Robot1/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library_AndroidPullToRefresh/library_AndroidPullToRefresh.iml" filepath="$PROJECT_DIR$/.idea/modules/library_AndroidPullToRefresh/library_AndroidPullToRefresh.iml" group="Yp_Robot1/library_AndroidPullToRefresh" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library_androidshapeimageview/library_androidshapeimageview.iml" filepath="$PROJECT_DIR$/.idea/modules/library_androidshapeimageview/library_androidshapeimageview.iml" group="Yp_Robot1/library_androidshapeimageview" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library_fanwe/library_fanwe.iml" filepath="$PROJECT_DIR$/.idea/modules/library_fanwe/library_fanwe.iml" group="Yp_Robot1/library_fanwe" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library_qrcode_zxing/library_qrcode_zxing.iml" filepath="$PROJECT_DIR$/.idea/modules/library_qrcode_zxing/library_qrcode_zxing.iml" group="Yp_Robot1/library_qrcode_zxing" />
+    </modules>
+  </component>
+</project>

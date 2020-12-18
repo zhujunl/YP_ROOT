@@ -1,0 +1,13 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\AndroidProject\Yp_Robot1\library_androidshapeimageview\src\main\AndroidManifest.xml:1:1-7:12
+INJECTED from E:\AndroidProject\Yp_Robot1\library_androidshapeimageview\src\main\AndroidManifest.xml:1:1-7:12
+INJECTED from E:\AndroidProject\Yp_Robot1\library_androidshapeimageview\src\main\AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from E:\AndroidProject\Yp_Robot1\library_androidshapeimageview\src\main\AndroidManifest.xml:2:5-48
+		INJECTED from E:\AndroidProject\Yp_Robot1\library_androidshapeimageview\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidProject\Yp_Robot1\library_androidshapeimageview\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\AndroidProject\Yp_Robot1\library_androidshapeimageview\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from E:\AndroidProject\Yp_Robot1\library_androidshapeimageview\src\main\AndroidManifest.xml:4:5-5:19
