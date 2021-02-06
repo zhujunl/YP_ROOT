@@ -113,7 +113,7 @@ public class MainActivity_Gai extends BaseActivity {
     private RobotStatusReponse robotStatusReponse;
     private RobotStatusReponse.ResultsBean resultsBean;
 
-    //关机
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -220,7 +220,7 @@ public class MainActivity_Gai extends BaseActivity {
             }
         }
     }
-
+    private String ChargePoint="充电桩";
     private void setBatter(){
         notice=ro.results.charger_connected_notice;
         batter=ro.results.battery_capacity;
@@ -237,18 +237,22 @@ public class MainActivity_Gai extends BaseActivity {
             } else {
                 batterimg.setImageResource(R.drawable.batter_zero);
             }
-            if(batter<=20){
-                RobotConnectAction.init(MainActivity_Gai.this).sendMoveMarker(mList.get(4), new RobotMoveCallback() {
-                    @Override
-                    public void robotNotificationResult(NotificationResponse info) {
-                        new Handler().postDelayed(new Runnable() {
+            if(batter<=30){
+                for(int i=0;i<mList.size();i++){
+                    if(mList.get(i).equals(ChargePoint)){
+                        RobotConnectAction.init(MainActivity_Gai.this).sendMoveMarker(mList.get(4), new RobotMoveCallback() {
                             @Override
-                            public void run() {
-                                notice=true;
+                            public void robotNotificationResult(NotificationResponse info) {
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        notice=true;
+                                    }
+                                },5000);
                             }
-                        },5000);
+                        });
                     }
-                });
+                }
             }
         }
         if(batter==50&&notice==true){
@@ -511,6 +515,7 @@ public class MainActivity_Gai extends BaseActivity {
 
 
     /**
+     * 机器人移动
      * @param sencond
      * @param marker
      * @param isFirstPoint
@@ -716,17 +721,27 @@ public class MainActivity_Gai extends BaseActivity {
 
     }
 
+    boolean soundflag=true;
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             String returnStr = (String) msg.obj;
-            if (TextUtils.isEmpty(returnStr))
-                return;
-            if (returnStr.equals("o")) {
-                if (mList == null)
-                    return;
-                if (mList.size() <= 0)
-                    return;
-                openDoor();
+            Log.d("returnStr=====",returnStr);
+//            if (TextUtils.isEmpty(returnStr))
+//                return;
+
+            if (returnStr.trim().equals("3")&&soundflag==true) {
+//                if (mList == null)
+//                    return;
+//                if (mList.size() <= 0)
+//                    return;
+                playMusic(4);
+                soundflag=false;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        soundflag=true;
+                    }
+                }, 2000);
 //                showCountDownDialog(1, firstMarker, true, true);
             }
         }
@@ -740,7 +755,7 @@ public class MainActivity_Gai extends BaseActivity {
     private LinearLayout ll_parent;
     boolean isQucan = false;
     boolean closeDoor = false;
-    String Back_Name="前台";
+    String Back_Name="起点";
 
     private void showTipDialog(boolean isEye) {
         if (mPreviewDialog != null) {
@@ -1002,6 +1017,13 @@ public class MainActivity_Gai extends BaseActivity {
         } else if (type == 3) {
             try {
                 mediaPlayer.setDataSource(this, Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.hycgy));
+                mediaPlayer.prepareAsync();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if(type==4){
+            try {
+                mediaPlayer.setDataSource(this, Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.giveway));
                 mediaPlayer.prepareAsync();
             } catch (Exception e) {
                 e.printStackTrace();

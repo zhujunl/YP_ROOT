@@ -16,7 +16,7 @@
             android:verticalSpacing="20dp"
             android:listSelector="@null"
             android:layout_weight="1"
-            android:numColumns="4" />
+            android:numColumns="5" />
     </ScrollView>
 
 </LinearLayout>
