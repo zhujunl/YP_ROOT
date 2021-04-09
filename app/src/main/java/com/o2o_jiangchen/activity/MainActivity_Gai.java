@@ -65,6 +65,9 @@ import cn.wch.ch34xuartdriver.CH34xUARTDriver;
 
 import static com.o2o_jiangchen.utils.Jc_Utils.toByteArray2;
 
+/**
+ * 机器人主要活动操作Activity
+ */
 
 public class MainActivity_Gai extends BaseActivity {
     private static final String ACTION_USB_PERMISSION = "cn.wch.wchusbdriver.USB_PERMISSION";
@@ -172,7 +175,9 @@ public class MainActivity_Gai extends BaseActivity {
 
     HashMap<String, Marker> map;
 
-
+    /**
+     * 获取地图点位
+     */
     private void getMarkerData() {
         MarkersReponse markersReponse = RobotConnectAction.init(MainActivity_Gai.this).getMarkers();
         map = markersReponse.results;
@@ -191,6 +196,7 @@ public class MainActivity_Gai extends BaseActivity {
             setBatter();
         }
     }
+
     //充电桩位置信息：（x=-22.44,y=1.47,theta=-1.47159）
     private void getPosition(){
         robotStatusReponse=RobotConnectAction.init(MainActivity_Gai.this).getRobotStatus();
@@ -221,6 +227,10 @@ public class MainActivity_Gai extends BaseActivity {
         }
     }
     private String ChargePoint="充电桩";
+
+    /**
+     * 设置电量信息，根据电量不同进行操作
+     */
     private void setBatter(){
         notice=ro.results.charger_connected_notice;
         batter=ro.results.battery_capacity;
@@ -248,8 +258,7 @@ public class MainActivity_Gai extends BaseActivity {
                                     public void run() {
                                         notice=true;
                                     }
-                                },5000);
-                            }
+                                },5000); }
                         });
                     }
                 }
@@ -261,7 +270,7 @@ public class MainActivity_Gai extends BaseActivity {
                 public void robotMoveResult(String code) {
                     new Handler().postDelayed(new Runnable() {
                         @Override
-                        public void run() {
+                        public void run() {;
                             notice=false;
                         }
                     },5000);
@@ -693,6 +702,9 @@ public class MainActivity_Gai extends BaseActivity {
         viewpagerFragmentAdapter.notifyDataSetChanged();
     }
 
+    /**
+     * 串口配置
+     */
     private void configCh340() {
         if (MyApplication.driver.mDeviceConnection == null) {
             SDToast.showToast("串口硬件配置失败");
@@ -721,32 +733,50 @@ public class MainActivity_Gai extends BaseActivity {
 
     }
 
-    boolean soundflag=true;
+
+    /*接收串口通信播放*/
+//    boolean soundflag=true;
+//    Handler handler = new Handler() {
+//        public void handleMessage(Message msg) {
+//            String returnStr = (String) msg.obj;
+//            Log.d("returnStr=====",returnStr);
+////            if (TextUtils.isEmpty(returnStr))
+////                return;
+//
+//            if (returnStr.trim().equals("3")&&soundflag==true) {
+////                if (mList == null)
+////                    return;
+////                if (mList.size() <= 0)
+////                    return;
+//                playMusic(4);
+//                soundflag=false;
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        soundflag=true;
+//                    }
+//                }, 2000);
+////                showCountDownDialog(1, firstMarker, true, true);
+//            }
+//        }
+//    };
+
+    /*串口开门*/
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             String returnStr = (String) msg.obj;
-            Log.d("returnStr=====",returnStr);
-//            if (TextUtils.isEmpty(returnStr))
-//                return;
-
-            if (returnStr.trim().equals("3")&&soundflag==true) {
-//                if (mList == null)
-//                    return;
-//                if (mList.size() <= 0)
-//                    return;
-                playMusic(4);
-                soundflag=false;
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        soundflag=true;
-                    }
-                }, 2000);
+            if (TextUtils.isEmpty(returnStr))
+                return;
+            if (returnStr.equals("o")) {
+                if (mList == null)
+                    return;
+                if (mList.size() <= 0)
+                    return;
+                openDoor();
 //                showCountDownDialog(1, firstMarker, true, true);
             }
         }
     };
-
 
 
     private TextView dialog_custom_tv_title = null;
@@ -865,6 +895,9 @@ public class MainActivity_Gai extends BaseActivity {
         view_pager.setCurrentItem(currentIndex);
     }
 
+    /**
+     *串口连接，开启串口接收线程
+     */
     private void openCh340() {
         if (!isOpen) {
             int retval = MyApplication.driver.ResumeUsbPermission();
